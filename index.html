@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌸 No Rose Without A Thorn 🫧</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Embedded All-In-One Stylesheet -->
+  <style>
+    /* =========================================================
+       ROSE & THORNS: BUBBLE STORYTELLING STYLESHEET
+       ========================================================= */
+    :root {
+      --font-bubble: 'Cherry Bomb One', cursive, sans-serif;
+      --font-heading: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-handwriting: 'Caveat', cursive, sans-serif;
+
+      /* Color Palette: Dark Thorns Theme */
+      --bg-dark-top: #0a0b10;
+      --bg-dark-mid: #151019;
+      --text-dark-primary: #f0e6f6;
+      --text-dark-secondary: #a99bb8;
+      --thorn-border: rgba(180, 50, 80, 0.35);
+      --thorn-card-bg: rgba(20, 16, 28, 0.78);
+
+      /* Color Palette: Light Roses Theme */
+      --bg-rose-warm: #fff5f7;
+      --bg-rose-card: rgba(255, 255, 255, 0.88);
+      --text-rose-primary: #3d2433;
+      --text-rose-secondary: #745166;
+      --rose-accent: #ff4d6d;
+      --rose-glow: rgba(255, 77, 109, 0.3);
+
+      /* Bubbly Pastel Candy Accents */
+      --bubble-pink: #ff758f;
+      --bubble-purple: #c77dff;
+      --bubble-blue: #70d6ff;
+      --bubble-yellow: #ffd166;
+      --bubble-green: #9bf6ff;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark-top);
+      color: var(--text-dark-primary);
+      line-height: 1.75;
+      overflow-x: hidden;
+      transition: background-color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.8s ease;
+      min-height: 100vh;
+    }
+
+    #story-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      position: fixed;
+      top: 1.5rem;
+      left: 0;
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .brand-pill {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      padding: 0.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .brand-pill:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 36px rgba(255, 117, 143, 0.4);
+    }
+
+    .audio-control-container {
+      pointer-events: auto;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* Cute 3D Bubble Button */
+    .bubble-btn {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #ff758f, #ff4d6d);
+      color: #fff;
+      box-shadow: 0 4px 0 #c9184a, 0 8px 20px rgba(255, 77, 109, 0.4);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .bubble-btn::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 8px;
+      right: 8px;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
+      border-radius: 9999px;
+      pointer-events: none;
+    }
+
+    .bubble-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #c9184a, 0 12px 24px rgba(255, 77, 109, 0.5);
+    }
+
+    .bubble-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #c9184a, 0 4px 10px rgba(255, 77, 109, 0.3);
+    }
+
+    .sparkle-btn {
+      background: linear-gradient(135deg, #70d6ff, #a0c4ff);
+      box-shadow: 0 4px 0 #4361ee, 0 8px 20px rgba(112, 214, 255, 0.4);
+    }
+    .sparkle-btn:hover {
+      box-shadow: 0 6px 0 #4361ee, 0 12px 24px rgba(112, 214, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #9b5de5, #f15bb5);
+      box-shadow: 0 4px 0 #7209b7, 0 8px 20px rgba(155, 93, 229, 0.4);
+    }
+
+    /* Scroll Tracker (Thorns ➔ Roses) */
+    .scroll-tracker-container {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 40;
+      background: rgba(15, 12, 22, 0.65);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 1rem 0.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .tracker-bar {
+      width: 6px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .tracker-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(180deg, #ff4d6d, #ffb3c1);
+      border-radius: 4px;
+      transition: height 0.1s linear;
+    }
+
+    .tracker-thumb {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      transition: top 0.1s linear;
+      filter: drop-shadow(0 2px 6px rgba(255, 77, 109, 0.6));
+    }
+
+    .tracker-icon-start, .tracker-icon-end {
+      font-size: 0.85rem;
+    }
+
+    /* Main Story Wrapper */
+    .story-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 10rem 1.5rem;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .bubble-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 117, 143, 0.15);
+      border: 1px solid rgba(255, 117, 143, 0.4);
+      padding: 0.4rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ff99c8;
+      margin-bottom: 2rem;
+      animation: floatBadge 3s ease-in-out infinite;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ff4d6d;
+      box-shadow: 0 0 10px #ff4d6d;
+      animation: pulseDot 1.5s infinite;
+    }
+
+    .bubble-title-main {
+      font-family: var(--font-bubble);
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      line-height: 1.1;
+      letter-spacing: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      margin-bottom: 1.2rem;
+    }
+
+    .bubble-letter {
+      display: inline-block;
+      color: var(--c, #ff758c);
+      text-shadow: 
+        0 4px 0 rgba(0, 0, 0, 0.3),
+        0 8px 1px rgba(0, 0, 0, 0.2),
+        0 0 20px var(--c, #ff758c),
+        -2px -2px 0 #fff;
+      animation: bubbleWiggle 4s ease-in-out infinite;
+      animation-delay: var(--d, 0s);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .bubble-letter:hover {
+      transform: scale(1.35) rotate(8deg);
+      filter: brightness(1.25);
+    }
+
+    .bubble-space {
+      display: inline-block;
+      width: 0.8rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-handwriting);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: #f7cad0;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero-quote-card {
+      position: relative;
+      background: rgba(25, 20, 36, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 117, 143, 0.3);
+      border-radius: 24px;
+      padding: 2.2rem 2.5rem;
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 77, 109, 0.15);
+    }
+
+    .quote-symbol {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: var(--font-bubble);
+      font-size: 4.5rem;
+      color: rgba(255, 117, 143, 0.3);
+      line-height: 1;
+    }
+
+    .quote-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #f5edf8;
+    }
+
+    .quote-text strong {
+      color: #ff99c8;
+      font-weight: 700;
+    }
+
+    .quote-author {
+      margin-top: 1.2rem;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      color: #c77dff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0.8;
+      animation: bounceSlow 2s ease-in-out infinite;
+    }
+
+    .mouse-icon {
+      width: 26px;
+      height: 42px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    .wheel {
+      width: 4px;
+      height: 8px;
+      background: #ff758f;
+      border-radius: 2px;
+      animation: scrollWheel 1.5s infinite;
+    }
+
+    .scroll-prompt {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #d8b4e2;
+    }
+
+    /* STORY SECTIONS */
+    .story-section {
+      padding: 5rem 0;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content-card {
+      position: relative;
+      width: 100%;
+      border-radius: 28px;
+      padding: 3rem 2.8rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .tag-bubble {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+    }
+
+    .essay-paragraph {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    /* ACT 1 */
+    .dark-card {
+      background: rgba(18, 14, 25, 0.85);
+      border: 1px solid var(--thorn-border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(180, 50, 80, 0.08);
+    }
+
+    .dark-tag {
+      background: rgba(180, 50, 80, 0.2);
+      color: #ff758f;
+      border: 1px solid rgba(255, 117, 143, 0.3);
+    }
+
+    .thorn-heading {
+      color: #ff85a1;
+      text-shadow: 0 2px 10px rgba(255, 77, 109, 0.3);
+    }
+
+    .inner-thought {
+      background: rgba(255, 77, 109, 0.08);
+      border-left: 4px solid #ff4d6d;
+      padding: 1rem 1.5rem;
+      border-radius: 0 16px 16px 0;
+      font-style: italic;
+      font-size: 1.18rem;
+      color: #ffccd5;
+      font-weight: 500;
+    }
+
+    .sticky-note {
+      position: relative;
+      width: 90%;
+      margin: 2.5rem auto 0 auto;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      transform: rotate(-1.5deg);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .sticky-dark {
+      background: #251c2e;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2cfea;
+    }
+
+    .sticky-rose {
+      background: #fff0f3;
+      border: 1px solid rgba(255, 117, 143, 0.3);
+      color: #592941;
+    }
+
+    .tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      border-radius: 3px;
+    }
+
+    .tape-pink {
+      background: rgba(255, 117, 143, 0.4);
+    }
+
+    .pin {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-size: 1.3rem;
+    }
+
+    .handwritten {
+      font-family: var(--font-handwriting);
+      font-size: 1.45rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* ACT 2: TRANSITION */
+    .transition-card {
+      background: rgba(30, 22, 38, 0.88);
+      border: 1px solid rgba(255, 153, 200, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(199, 125, 255, 0.15);
+    }
+
+    .transition-tag {
+      background: rgba(199, 125, 255, 0.2);
+      color: #e4c1f9;
+      border: 1px solid rgba(199, 125, 255, 0.4);
+    }
+
+    .transition-heading {
+      color: #f7cad0;
+    }
+
+    .vulnerability-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .vuln-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.1rem 1.4rem;
+      border-radius: 16px;
+      font-size: 1.02rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .vuln-item:hover {
+      transform: translateX(6px);
+      background: rgba(255, 117, 143, 0.1);
+      border-color: rgba(255, 117, 143, 0.3);
+    }
+
+    .vuln-icon {
+      font-size: 1.3rem;
+    }
+
+    /* Mind Pop Game */
+    .mind-pop-game {
+      margin-top: 2.5rem;
+      background: rgba(10, 8, 16, 0.6);
+      border: 1px dashed rgba(255, 117, 143, 0.4);
+      border-radius: 20px;
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    .game-header {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffccd5;
+      margin-bottom: 1.2rem;
+    }
+
+    .thorn-bubbles-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    .thorn-pop-item {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255, 77, 109, 0.2);
+      color: #ff99c8;
+      border: 1px solid rgba(255, 77, 109, 0.5);
+      padding: 0.6rem 1.1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+    }
+
+    .thorn-pop-item:hover {
+      transform: scale(1.08);
+      background: rgba(255, 77, 109, 0.4);
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+    }
+
+    .thorn-pop-item.popped {
+      opacity: 0.3;
+      transform: scale(0.85);
+      pointer-events: none;
+      background: rgba(150, 255, 180, 0.2);
+      border-color: rgba(150, 255, 180, 0.5);
+      color: #a7f3d0;
+      text-decoration: line-through;
+    }
+
+    .game-hint {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #c77dff;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       NEW: REJECTION LETTERS & POLAROID GALLERY BOARD
+       ========================================================= */
+    .rejection-board-section {
+      margin-top: 3rem;
+      background: rgba(15, 11, 22, 0.75);
+      border: 2px solid rgba(180, 50, 80, 0.4);
+      border-radius: 24px;
+      padding: 2.2rem 1.8rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .board-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .board-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: #ff85a1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .board-subtitle {
+      font-size: 0.92rem;
+      color: #bfa8cb;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .polaroid-card {
+      background: #fff;
+      padding: 0.9rem 0.9rem 1.4rem 0.9rem;
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      color: #333;
+      transform: rotate(var(--rot, -2deg));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .polaroid-card:hover {
+      transform: scale(1.05) rotate(0deg);
+      z-index: 10;
+      box-shadow: 0 15px 35px rgba(255, 117, 143, 0.35);
+    }
+
+    .polaroid-tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 18px;
+      background: rgba(255, 182, 193, 0.7);
+      backdrop-filter: blur(2px);
+    }
+
+    .polaroid-img-box {
+      width: 100%;
+      height: 160px;
+      background: #201a28;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #f7cad0;
+      text-align: center;
+      padding: 0.75rem;
+      position: relative;
+    }
+
+    .polaroid-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .polaroid-caption {
+      margin-top: 0.8rem;
+      font-family: var(--font-handwriting);
+      font-size: 1.25rem;
+      line-height: 1.2;
+      color: #4a283e;
+      text-align: center;
+    }
+
+    .polaroid-tag {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #c9184a;
+      background: #ffe5ec;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    .upload-rejection-zone {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed rgba(255, 117, 143, 0.4);
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+    }
+
+    .upload-info {
+      font-size: 0.9rem;
+      color: #e4c1f9;
+    }
+
+    /* =========================================================
+       NEW: ACADEMIC PORTFOLIO & CV SHOWCASE HUB
+       ========================================================= */
+    .cv-hub-section {
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid #ffccd5;
+      box-shadow: 0 25px 60px rgba(255, 117, 143, 0.22);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      margin: 4rem 0;
+      color: #4a283e;
+      text-align: center;
+    }
+
+    .cv-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-pill {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #fff0f3;
+      color: #c9184a;
+      border: 1px solid #ffb3c1;
+      padding: 0.3rem 0.9rem;
+      border-radius: 9999px;
+    }
+
+    .cv-title {
+      font-family: var(--font-bubble);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      color: #ff4d6d;
+      text-shadow: 0 2px 0 #fff, 0 4px 10px rgba(255, 77, 109, 0.3);
+      margin-bottom: 0.6rem;
+    }
+
+    .cv-desc {
+      font-size: 1.05rem;
+      color: #724e65;
+      max-width: 620px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.7;
+    }
+
+    .cv-actions-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cv-dropzone {
+      background: #fff5f7;
+      border: 2px dashed #ff85a1;
+      border-radius: 20px;
+      padding: 1.8rem;
+      max-width: 580px;
+      margin: 0 auto;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cv-dropzone:hover {
+      background: #ffe8ee;
+      border-color: #ff4d6d;
+      transform: scale(1.02);
+    }
+
+    .cv-dropzone-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cv-status-msg {
+      margin-top: 0.8rem;
+      font-size: 0.88rem;
+      color: #a4133c;
+      font-weight: 600;
+    }
+
+    /* ACT 3: ROSES */
+    .rose-card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px solid rgba(255, 182, 193, 0.6);
+      box-shadow: 0 25px 60px rgba(255, 77, 109, 0.2), 0 0 40px rgba(255, 220, 230, 0.5);
+      color: var(--text-rose-primary);
+    }
+
+    .rose-tag {
+      background: #ffe5ec;
+      color: #ff4d6d;
+      border: 1px solid #ffb3c1;
+    }
+
+    .rose-heading {
+      color: #c9184a;
+      text-shadow: 0 2px 8px rgba(255, 117, 143, 0.3);
+    }
+
+    .highlight-light {
+      color: #4a283e;
+    }
+
+    .lead-quote {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #a4133c;
+      line-height: 1.5;
+    }
+
+    .golden-manifesto {
+      position: relative;
+      background: linear-gradient(135deg, #fff0f3, #ffe3e8);
+      border: 2px solid #ff758f;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      font-size: 1.22rem;
+      line-height: 1.8;
+      color: #590d22;
+      box-shadow: 0 10px 30px rgba(255, 77, 109, 0.15);
+    }
+
+    .sparkle-star {
+      position: absolute;
+      top: -12px;
+      right: 15px;
+      font-size: 1.8rem;
+      animation: spinSlow 6s linear infinite;
+    }
+
+    /* FINALE */
+    .finale-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid #ffccd5;
+      box-shadow: 0 30px 70px rgba(255, 117, 143, 0.25);
+      text-align: center;
+      color: #4a283e;
+    }
+
+    .big-bubble-icon {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      animation: bounceSlow 3s ease-in-out infinite;
+    }
+
+    .bubble-title-sub {
+      font-family: var(--font-bubble);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #ff4d6d;
+      text-shadow: 0 2px 0 #fff, 0 4px 10px rgba(255, 77, 109, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .finale-subtitle {
+      font-size: 1.05rem;
+      color: #805b73;
+      margin-bottom: 2rem;
+    }
+
+    .bloom-box {
+      background: #fff5f7;
+      border: 1px solid #ffb3c1;
+      border-radius: 24px;
+      padding: 2.2rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 580px) {
+      .input-wrapper {
+        flex-direction: row;
+      }
+    }
+
+    .input-wrapper input {
+      flex: 1;
+      padding: 0.85rem 1.4rem;
+      border-radius: 9999px;
+      border: 2px solid #ffb3c1;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+      background: #fff;
+      color: #333;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-wrapper input:focus {
+      border-color: #ff4d6d;
+      box-shadow: 0 0 0 4px rgba(255, 77, 109, 0.2);
+    }
+
+    .bloom-action-btn {
+      font-size: 1rem;
+      padding: 0.85rem 1.6rem;
+      white-space: nowrap;
+    }
+
+    .rose-garden-display {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .garden-flower-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .virtual-rose {
+      font-size: 4.5rem;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: drop-shadow(0 8px 16px rgba(255, 77, 109, 0.4));
+      cursor: pointer;
+    }
+
+    .virtual-rose.bloomed {
+      transform: scale(1.3) rotate(5deg);
+      animation: gentleSway 3s ease-in-out infinite alternate;
+    }
+
+    .rose-name-tag {
+      font-family: var(--font-handwriting);
+      font-size: 1.45rem;
+      color: #c9184a;
+      font-weight: 700;
+      max-width: 400px;
+    }
+
+    .footer-blessing {
+      font-size: 0.95rem;
+      color: #8c6d81;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .mini-tags {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ff758f;
+      letter-spacing: 0.5px;
+    }
+
+    /* Modal for Image Preview */
+    .image-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .image-modal.active {
+      display: flex;
+    }
+
+    .modal-content-box {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-content-box img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ff4d6d;
+      color: #fff;
+      border: 2px solid #fff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* ANIMATIONS */
+    @keyframes bubbleWiggle {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-3deg); }
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    @keyframes bounceSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes scrollWheel {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(12px); opacity: 0; }
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes gentleSway {
+      0% { transform: scale(1.3) rotate(-4deg); }
+      100% { transform: scale(1.35) rotate(4deg); }
+    }
+
+    .click-particle {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      animation: popFloat 1s forwards ease-out;
+      z-index: 9999;
+    }
+
+    @keyframes popFloat {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .story-wrapper { padding: 5rem 1rem 8rem 1rem; }
+      .content-card { padding: 2rem 1.4rem; }
+      .scroll-tracker-container { display: none; }
+      .top-nav { padding: 0 1rem; }
+      .brand-text { display: none; }
+    }
+  </style>
+</head>
+<body class="theme-dark">
+
+  <!-- Background Canvas -->
+  <canvas id="story-canvas"></canvas>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <div class="brand-pill">
+      <span class="sparkle-icon">✨</span>
+      <span class="brand-text">Cindy's Journal</span>
+      <span class="sparkle-icon">🫧</span>
+    </div>
+    
+    <div class="audio-control-container">
+      <button id="bgm-toggle" class="bubble-btn audio-btn" title="Toggle peaceful ambient music">
+        <i data-lucide="music" id="music-icon"></i>
+        <span class="audio-label">Music: Off</span>
+      </button>
+      <button id="bubble-toy-btn" class="bubble-btn sparkle-btn" title="Release more bubbles!">
+        <span>🫧 Spawn Bubbles</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Tracker -->
+  <div class="scroll-tracker-container">
+    <div class="tracker-icon-start">🖤 🌵</div>
+    <div class="tracker-bar">
+      <div class="tracker-fill" id="tracker-fill"></div>
+      <div class="tracker-thumb" id="tracker-thumb">🥀</div>
+    </div>
+    <div class="tracker-icon-end">🌸 🌹</div>
+  </div>
+
+  <!-- Main Story Content -->
+  <main class="story-wrapper">
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+      <div class="bubble-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">A personal reflection on ambition, self-trust & passion</span>
+      </div>
+
+      <h1 class="bubble-title-main">
+        <span class="bubble-letter" style="--d:0.0s; --c:#ff758c;">D</span>
+        <span class="bubble-letter" style="--d:0.1s; --c:#ff7eb3;">o</span>
+        <span class="bubble-space"> </span>
+        <span class="bubble-letter" style="--d:0.2s; --c:#70a6ff;">I</span>
+        <span class="bubble-letter" style="--d:0.3s; --c:#88e5ff;">t</span>
+        <span class="bubble-space"> </span>
+        <span class="bubble-letter" style="--d:0.4s; --c:#ffd166;">W</span>
+        <span class="bubble-letter" style="--d:0.5s; --c:#ffaa5a;">i</span>
+        <span class="bubble-letter" style="--d:0.6s; --c:#ff90b3;">t</span>
+        <span class="bubble-letter" style="--d:0.7s; --c:#ff6392;">h</span>
+        <br class="mobile-break"/>
+        <span class="bubble-letter" style="--d:0.8s; --c:#ff477e;">P</span>
+        <span class="bubble-letter" style="--d:0.9s; --c:#ff5c8a;">a</span>
+        <span class="bubble-letter" style="--d:1.0s; --c:#ff70a6;">s</span>
+        <span class="bubble-letter" style="--d:1.1s; --c:#ff85a1;">s</span>
+        <span class="bubble-letter" style="--d:1.2s; --c:#ff99c8;">i</span>
+        <span class="bubble-letter" style="--d:1.3s; --c:#d0f4de;">o</span>
+        <span class="bubble-letter" style="--d:1.4s; --c:#a9def9;">n</span>
+        <span class="bubble-space"> </span>
+        <span class="bubble-letter" style="--d:1.5s; --c:#e4c1f9;">✨</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        <i>“...or not at all.”</i>
+      </p>
+
+      <div class="hero-quote-card">
+        <div class="quote-symbol">“</div>
+        <p class="quote-text">
+          Rosa Nouchette Carey once remarked: <strong>“Do it with passion or not at all.”</strong> It is one of the most memorable quotes that I received from one of my special ones. It has followed me throughout my journey in these few months; it’s the only fuel that makes my dream and motivation continue to shine.
+        </p>
+        <div class="quote-author">— Rosa Nouchette Carey & My Special One</div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span class="scroll-prompt">Scroll down to wander through the dark thorns into the blooming garden 🫧</span>
+      </div>
+    </header>
+
+    <!-- ACT 1: THE DARK THORNS -->
+    <section class="story-section act-thorns" id="act-1">
+      <div class="content-card dark-card">
+        <div class="tag-bubble dark-tag">
+          <span>🌑 ACT I: The Dark Thorns of Self-Doubt</span>
+        </div>
+        
+        <h2 class="card-heading thorn-heading">
+          Do I actually enjoy learning... or am I too focused on proving that I’m capable?
+        </h2>
+
+        <div class="essay-paragraph">
+          <p>
+            I always set high goals, wanting to do well in academics and pursue opportunities. Yet, sometimes I feel confused even about myself:
+          </p>
+          <blockquote class="inner-thought">
+            “Do I actually enjoy learning, or am I too focused on proving that I’m capable?”
+          </blockquote>
+          <p>
+            I feel happy when I study (in some specific parts, I guess), but… when I fail, <strong>I never dare to trust myself again</strong>. But who is the one I’m trying to prove? I don’t really care about my parents or people around me. But then, do I have to let external factors affect my own trust for myself? Then what am I?
+          </p>
+          <p>
+            While I think that I am ambitious, the idea of constantly switching the goalpost feels like every achievement becomes meaningless, yet not meeting it is horrible. Then when is the time that...
+          </p>
+        </div>
+
+        <div class="sticky-note sticky-dark">
+          <div class="tape"></div>
+          <span class="pin">📍</span>
+          <p class="handwritten">
+            “Constantly shifting the goalpost makes every achievement feel hollow, yet falling short terrifies me to the point of losing all faith in myself…”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2: THE CRUMBLING THRESHOLD & SCHOLARSHIP REJECTIONS -->
+    <section class="story-section act-transition" id="act-2">
+      <div class="content-card transition-card">
+        <div class="tag-bubble transition-tag">
+          <span>🥀 ACT II: The Paralysis Before the Finish Line</span>
+        </div>
+
+        <h2 class="card-heading transition-heading">
+          “There is no rose without a thorn.”
+        </h2>
+
+        <div class="essay-paragraph">
+          <p>
+            Nevertheless, <strong>there is no rose without a thorn</strong>. While ambitious, I don’t have the ability to trust myself. In any last step of achieving new achievements, I always freak out and am not able to perform as usual.
+          </p>
+          
+          <div class="vulnerability-box">
+            <div class="vuln-item">
+              <span class="vuln-icon">⚡</span>
+              <div>
+                <strong>The Invisible Panic:</strong> Sometimes it does matter, but most of the time it affects my results and then I always think that I am not able to do anything.
+              </div>
+            </div>
+            <div class="vuln-item">
+              <span class="vuln-icon">📜</span>
+              <div>
+                <strong>During a Scholarship:</strong> While everything presented in front of me are the things that I can do in a few seconds, I still freak out and cannot complete it.
+              </div>
+            </div>
+            <div class="vuln-item">
+              <span class="vuln-icon">💭</span>
+              <div>
+                <strong>Right at this moment:</strong> Or just like right now, I start worrying about my school score even though everything is completely fine!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mind Pop Game -->
+        <div class="mind-pop-game">
+          <div class="game-header">
+            <span>🫧 Pop these sharp thorny bubbles to release your self-doubts:</span>
+          </div>
+          <div class="thorn-bubbles-container" id="thorn-bubble-box">
+            <button class="thorn-pop-item"><span>💥 Worrying About Grades</span></button>
+            <button class="thorn-pop-item"><span>💥 Panic at the Finish Line</span></button>
+            <button class="thorn-pop-item"><span>💥 Self-Doubt</span></button>
+            <button class="thorn-pop-item"><span>💥 External Pressure</span></button>
+            <button class="thorn-pop-item"><span>💥 Fear of Failure</span></button>
+          </div>
+          <p class="game-hint" id="game-status">Cleared 0/5 worries ✨</p>
+        </div>
+
+        <!-- NEW: THE WALL OF SCHOLARSHIP REJECTIONS & STEPPING STONES -->
+        <div class="rejection-board-section">
+          <div class="board-header">
+            <h3 class="board-title">🥀 The Wall of Thorns: Scholarship Letters & Stepping Stones</h3>
+            <p class="board-subtitle">Every rejection is a thorn that shapes the bloom. Add and view your rejection memories below:</p>
+          </div>
+
+          <!-- Polaroid Grid Gallery -->
+          <div class="polaroid-grid" id="polaroid-gallery">
+            
+            <!-- Default Sample 1 -->
+            <div class="polaroid-card" style="--rot: -2.5deg;" onclick="previewImage('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=80', 'Scholarship Rejection Letter #1')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-box">
+                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">📜</div>
+                <div style="font-size:0.85rem; font-weight: 600;">“We regret to inform you...”</div>
+                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Scholarship Selection Round</div>
+              </div>
+              <div class="polaroid-caption">“A painful thorn, but it proved I dared to apply.”</div>
+              <div class="polaroid-tag">#Resilience</div>
+            </div>
+
+            <!-- Default Sample 2 -->
+            <div class="polaroid-card" style="--rot: 2deg;" onclick="previewImage('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80', 'Interview Stage Panic')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-box">
+                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">⚡</div>
+                <div style="font-size:0.85rem; font-weight: 600;">Final Interview Room</div>
+                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Freaked out at the finish line</div>
+              </div>
+              <div class="polaroid-caption">“Next time, I will breathe and trust my prep.”</div>
+              <div class="polaroid-tag">#SteppingStone</div>
+            </div>
+
+            <!-- Default Sample 3 -->
+            <div class="polaroid-card" style="--rot: -1.5deg;" onclick="previewImage('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80', 'Competition Finalist')">
+              <div class="polaroid-tape"></div>
+              <div class="polaroid-img-box">
+                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">🌱</div>
+                <div style="font-size:0.85rem; font-weight: 600;">Olympiad / Fellowship</div>
+                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Not this time, but I grew</div>
+              </div>
+              <div class="polaroid-caption">“Fuel that makes my motivation shine.”</div>
+              <div class="polaroid-tag">#Learning</div>
+            </div>
+
+          </div>
+
+          <!-- Uploader Input for Custom Photos -->
+          <div class="upload-rejection-zone">
+            <div class="upload-info">
+              <strong>📸 Add Your Own Scholarship Screenshots / Photos:</strong>
+              <div style="font-size:0.82rem; opacity: 0.85; margin-top: 2px;">Upload rejection letters or memory screenshots to pin them on this board!</div>
+            </div>
+            <div>
+              <input type="file" id="rejection-file-input" accept="image/*" multiple style="display: none;" />
+              <button class="bubble-btn sparkle-btn" onclick="document.getElementById('rejection-file-input').click()">
+                <span>➕ Upload Photos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACT 3: THE BLOOMING GARDEN -->
+    <section class="story-section act-roses" id="act-3">
+      <div class="content-card rose-card">
+        <div class="tag-bubble rose-tag">
+          <span>🌸 ACT III: The Blooming Garden</span>
+        </div>
+
+        <h2 class="card-heading rose-heading">
+          Living in a plain but comfortable life or a harsh but accomplished one?
+        </h2>
+
+        <div class="essay-paragraph highlight-light">
+          <p class="lead-quote">
+            “Living in a plain but comfortable life or a harsh but accomplished one?”
+          </p>
+          <p>
+            <strong>I don’t like a plain life.</strong> I am looking for a life that I can look back on and know that I did not settle for what was comfortable simply because it was comfortable.
+          </p>
+          <div class="golden-manifesto">
+            <div class="sparkle-star">✨</div>
+            <p>
+              “I don't know yet how harsh that journey will be, or whether every goal I have now will remain mine. <strong>But I know that I would rather struggle toward something I deeply care about than wake up one day wondering what I could have become.</strong>”
+            </p>
+          </div>
+        </div>
+
+        <div class="sticky-note sticky-rose">
+          <div class="tape tape-pink"></div>
+          <span class="pin">💖</span>
+          <p class="handwritten">
+            “No matter how many thorns line the path ahead, I still choose passion. Because that is the only way my own rose will truly blossom.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: ACADEMIC PROFILE & CV / RESUME HUB -->
+    <section class="cv-hub-section" id="cv-section">
+      <div class="cv-badge-row">
+        <span class="cv-pill">📐 Math Olympiad</span>
+        <span class="cv-pill">📚 Passionate Academic</span>
+        <span class="cv-pill">💡 Research & Exploration</span>
+        <span class="cv-pill">🌹 Unyielding Spirit</span>
+      </div>
+
+      <h2 class="cv-title">Cindy's Academic CV & Journey</h2>
+      <p class="cv-desc">
+        Here is a showcase of my academic background, projects, and pursuits. Feel free to view or download my latest CV below:
+      </p>
+
+      <div class="cv-actions-container">
+        <a href="#cv-section" id="download-cv-btn" class="bubble-btn" onclick="handleDownloadCV(event)">
+          <span>📥 Download My CV (PDF)</span>
+        </a>
+        <button class="bubble-btn btn-secondary" onclick="previewCVModal()">
+          <span>👁️ Preview CV in Browser</span>
+        </button>
+      </div>
+
+      <!-- CV File Dropzone / Uploader -->
+      <div class="cv-dropzone" onclick="document.getElementById('cv-file-input').click()">
+        <input type="file" id="cv-file-input" accept=".pdf,image/*" style="display: none;" />
+        <div class="cv-dropzone-icon">📄</div>
+        <div style="font-weight: 700; color: #ff4d6d; font-size: 1.05rem;">Click to Upload / Replace Your CV File</div>
+        <div style="font-size: 0.85rem; color: #885e78; margin-top: 4px;">Supports PDF or image files (stores locally for instant preview & download)</div>
+        <div class="cv-status-msg" id="cv-upload-status">Currently using: Cindy_Academic_CV.pdf (Ready to download) ✨</div>
+      </div>
+    </section>
+
+    <!-- FINALE: PLANT YOUR ROSE -->
+    <section class="story-section finale-section" id="act-4">
+      <div class="content-card finale-card">
+        <div class="finale-header">
+          <div class="big-bubble-icon">🌹</div>
+          <h2 class="bubble-title-sub">Your Rose Will Blossom</h2>
+          <p class="finale-subtitle">Plant a wish or reminder for your present self</p>
+        </div>
+
+        <div class="bloom-box">
+          <div class="input-wrapper">
+            <input type="text" id="goal-input" placeholder="Type a dream or passion you are chasing..." value="Ace my goals and trust myself wholeheartedly! ✨" />
+            <button id="bloom-btn" class="bubble-btn bloom-action-btn">
+              <span>🌸 Nurture & Bloom</span>
+            </button>
+          </div>
+
+          <div class="rose-garden-display" id="garden-display">
+            <div class="garden-flower-slot">
+              <div class="virtual-rose" id="virtual-rose">🌹</div>
+              <div class="rose-name-tag" id="rose-name-tag">“Do it with passion or not at all.”</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-blessing">
+          <p>Made with all the passion, warmth & pastel bubbles for Cindy 🫧</p>
+          <span class="mini-tags">#DoItWithPassion #NoRoseWithoutAThorn #AlwaysBelieveInYourself</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Fullscreen Image & Document Preview Modal -->
+  <div class="image-modal" id="preview-modal" onclick="closePreviewModal(event)">
+    <div class="modal-content-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closePreviewModal()">✕</button>
+      <img id="modal-img" src="" alt="Preview" style="display: none;" />
+      <iframe id="modal-iframe" src="" style="display: none; width: 80vw; height: 75vh; border: none; border-radius: 8px;"></iframe>
+      <div id="modal-caption" style="margin-top: 1rem; font-family: var(--font-heading); font-weight: 600; color: #ff4d6d;"></div>
+    </div>
+  </div>
+
+  <!-- Embedded All-In-One Script -->
+  <script>
+    /* =========================================================
+       ROSE & THORNS: INTERACTIVE STORY ENGINE
+       ========================================================= */
+    let customCVDataUrl = null;
+    let customCVFileName = 'Cindy_Academic_CV.pdf';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      let scrollProgress = 0;
+      let isPlayingBgm = false;
+      let audioCtx = null;
+      let bgmInterval = null;
+
+      /* 1. CANVAS PROCEDURAL GENERATION */
+      const canvas = document.getElementById('story-canvas');
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initParticles();
+      });
+
+      const particles = [];
+      const TOTAL_PARTICLES = 50;
+
+      class StoryParticle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.size = Math.random() * 8 + 4;
+          this.speedY = Math.random() * 1.5 + 0.5;
+          this.speedX = Math.sin(Math.random() * Math.PI * 2) * 0.8;
+          this.angle = Math.random() * Math.PI * 2;
+          this.rotSpeed = (Math.random() - 0.5) * 0.04;
+          this.opacity = Math.random() * 0.7 + 0.3;
+          this.wobble = Math.random() * Math.PI * 2;
+        }
+
+        update() {
+          this.y += this.speedY;
+          this.wobble += 0.03;
+          this.x += Math.sin(this.wobble) * 0.8 + this.speedX;
+          this.angle += this.rotSpeed;
+
+          if (this.y > height + 20) {
+            this.y = -20;
+            this.x = Math.random() * width;
+          }
+        }
+
+        draw(progress) {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.angle);
+
+          if (progress < 0.35) {
+            ctx.fillStyle = `rgba(${180 + Math.sin(this.wobble) * 40}, 30, 60, ${this.opacity * (1 - progress)})`;
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size * 1.2);
+            ctx.lineTo(this.size * 0.4, 0);
+            ctx.lineTo(0, this.size * 1.2);
+            ctx.lineTo(-this.size * 0.4, 0);
+            ctx.closePath();
+            ctx.fill();
+          } else if (progress >= 0.35 && progress < 0.65) {
+            const midRatio = (progress - 0.35) / 0.3;
+            ctx.fillStyle = `rgba(255, ${160 + midRatio * 50}, ${180 + midRatio * 40}, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size * 0.6, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            const roseRatio = (progress - 0.65) / 0.35;
+            ctx.fillStyle = `rgba(255, ${120 + Math.sin(this.wobble) * 30}, ${160 + Math.cos(this.wobble) * 30}, ${this.opacity * Math.min(1, roseRatio + 0.3)})`;
+            ctx.shadowColor = 'rgba(255, 117, 143, 0.4)';
+            ctx.shadowBlur = 8;
+            
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size);
+            ctx.bezierCurveTo(this.size * 1.2, -this.size * 0.6, this.size * 1.1, this.size * 0.8, 0, this.size * 1.2);
+            ctx.bezierCurveTo(-this.size * 1.1, this.size * 0.8, -this.size * 1.2, -this.size * 0.6, 0, -this.size);
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      function initParticles() {
+        particles.length = 0;
+        for (let i = 0; i < TOTAL_PARTICLES; i++) {
+          particles.push(new StoryParticle());
+        }
+      }
+      initParticles();
+
+      function drawVines(progress) {
+        ctx.save();
+        const thornWeight = Math.max(0, 1 - progress * 1.6);
+        const roseWeight = Math.max(0, (progress - 0.4) * 1.66);
+
+        // Left Vine
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(
+          60 * Math.sin(Date.now() * 0.001),
+          height * 0.4,
+          80 * Math.cos(Date.now() * 0.0012),
+          height * 0.7,
+          0,
+          height
+        );
+        ctx.lineWidth = 6 + thornWeight * 4;
+        
+        if (thornWeight > 0.1) {
+          ctx.strokeStyle = `rgba(60, 20, 35, ${thornWeight * 0.8})`;
+          ctx.stroke();
+
+          for (let y = 50; y < height; y += 120) {
+            ctx.save();
+            ctx.translate(25 + Math.sin(y * 0.05) * 15, y);
+            ctx.rotate(-0.4);
+            ctx.fillStyle = `rgba(180, 40, 70, ${thornWeight * 0.9})`;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(25 * thornWeight, -10 * thornWeight);
+            ctx.lineTo(5 * thornWeight, 5 * thornWeight);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        // Right Vine
+        if (roseWeight > 0.05) {
+          ctx.beginPath();
+          ctx.moveTo(width, 0);
+          ctx.bezierCurveTo(
+            width - 70 * Math.sin(Date.now() * 0.001),
+            height * 0.3,
+            width - 90 * Math.cos(Date.now() * 0.001),
+            height * 0.8,
+            width,
+            height
+          );
+          ctx.lineWidth = 5;
+          ctx.strokeStyle = `rgba(140, 200, 150, ${roseWeight * 0.6})`;
+          ctx.stroke();
+
+          for (let y = 80; y < height; y += 150) {
+            const flowerX = width - 40 - Math.sin(y * 0.03) * 20;
+            ctx.save();
+            ctx.translate(flowerX, y);
+            ctx.scale(roseWeight, roseWeight);
+            
+            ctx.fillStyle = '#ff85a1';
+            for (let p = 0; p < 5; p++) {
+              ctx.beginPath();
+              ctx.rotate((Math.PI * 2) / 5);
+              ctx.arc(10, 0, 8, 0, Math.PI * 2);
+              ctx.fill();
+            }
+            ctx.fillStyle = '#ffd166';
+            ctx.beginPath();
+            ctx.arc(0, 0, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+          }
+        }
+
+        ctx.restore();
+      }
+
+      function renderCanvas() {
+        ctx.clearRect(0, 0, width, height);
+
+        let bgR, bgG, bgB;
+        if (scrollProgress < 0.5) {
+          const t = scrollProgress / 0.5;
+          bgR = Math.round(10 + (25 - 10) * t);
+          bgG = Math.round(11 + (16 - 11) * t);
+          bgB = Math.round(16 + (36 - 16) * t);
+        } else {
+          const t = (scrollProgress - 0.5) / 0.5;
+          bgR = Math.round(25 + (255 - 25) * t);
+          bgG = Math.round(16 + (243 - 16) * t);
+          bgB = Math.round(36 + (245 - 36) * t);
+        }
+        document.body.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+
+        drawVines(scrollProgress);
+
+        particles.forEach(p => {
+          p.update();
+          p.draw(scrollProgress);
+        });
+
+        requestAnimationFrame(renderCanvas);
+      }
+      requestAnimationFrame(renderCanvas);
+
+      /* 2. SCROLL PROGRESS TRACKER */
+      const trackerFill = document.getElementById('tracker-fill');
+      const trackerThumb = document.getElementById('tracker-thumb');
+
+      function updateScrollProgress() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        scrollProgress = Math.min(Math.max(scrollTop / (docHeight || 1), 0), 1);
+
+        if (trackerFill && trackerThumb) {
+          const pct = Math.round(scrollProgress * 100);
+          trackerFill.style.height = `${pct}%`;
+          trackerThumb.style.top = `${pct}%`;
+
+          if (scrollProgress < 0.35) {
+            trackerThumb.textContent = '🌵';
+          } else if (scrollProgress < 0.7) {
+            trackerThumb.textContent = '🥀';
+          } else {
+            trackerThumb.textContent = '🌹';
+          }
+        }
+
+        if (scrollProgress > 0.6) {
+          document.body.classList.remove('theme-dark');
+          document.body.classList.add('theme-light');
+        } else {
+          document.body.classList.remove('theme-light');
+          document.body.classList.add('theme-dark');
+        }
+      }
+
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      updateScrollProgress();
+
+      /* 3. BUBBLE TOY */
+      function spawnFloatingBubble(x, y, text = '🫧') {
+        const bubble = document.createElement('div');
+        bubble.className = 'click-particle';
+        bubble.style.left = `${x}px`;
+        bubble.style.top = `${y}px`;
+        bubble.style.setProperty('--tx', `${(Math.random() - 0.5) * 160}px`);
+        bubble.style.setProperty('--ty', `${-(Math.random() * 120 + 60)}px`);
+        bubble.style.fontSize = `${Math.random() * 1.5 + 1.2}rem`;
+        bubble.textContent = text;
+        document.body.appendChild(bubble);
+
+        setTimeout(() => {
+          bubble.remove();
+        }, 1000);
+      }
+
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('.polaroid-card')) {
+          return;
+        }
+        const icons = ['✨', '🫧', '🌸', '💖', '⭐'];
+        const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        spawnFloatingBubble(e.clientX, e.clientY, randomIcon);
+        playPopSound(440 + Math.random() * 400, 0.05);
+      });
+
+      const bubbleToyBtn = document.getElementById('bubble-toy-btn');
+      if (bubbleToyBtn) {
+        bubbleToyBtn.addEventListener('click', () => {
+          for (let i = 0; i < 8; i++) {
+            setTimeout(() => {
+              const x = Math.random() * window.innerWidth;
+              const y = window.innerHeight - 50;
+              spawnFloatingBubble(x, y, '🫧');
+            }, i * 80);
+          }
+          playPopSound(587.33, 0.1);
+        });
+      }
+
+      /* 4. MIND POP GAME */
+      const thornItems = document.querySelectorAll('.thorn-pop-item');
+      const gameStatus = document.getElementById('game-status');
+      let poppedCount = 0;
+
+      thornItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (!item.classList.contains('popped')) {
+            item.classList.add('popped');
+            poppedCount++;
+            
+            const rect = item.getBoundingClientRect();
+            for (let i = 0; i < 5; i++) {
+              spawnFloatingBubble(rect.left + rect.width / 2, rect.top, '✨');
+            }
+
+            playPopSound(523.25 + poppedCount * 80, 0.12);
+
+            if (poppedCount === thornItems.length) {
+              gameStatus.textContent = '🎉 You released all the doubts! Walk forward with passion & courage 💖';
+              gameStatus.style.color = '#ff4d6d';
+              gameStatus.style.fontWeight = '700';
+            } else {
+              gameStatus.textContent = `Cleared ${poppedCount}/${thornItems.length} worries ✨`;
+            }
+          }
+        });
+      });
+
+      /* 5. FINALE: BLOOM YOUR ROSE */
+      const bloomBtn = document.getElementById('bloom-btn');
+      const goalInput = document.getElementById('goal-input');
+      const virtualRose = document.getElementById('virtual-rose');
+      const roseNameTag = document.getElementById('rose-name-tag');
+
+      if (bloomBtn && goalInput && virtualRose && roseNameTag) {
+        bloomBtn.addEventListener('click', () => {
+          const goalText = goalInput.value.trim() || 'Do it with passion or not at all!';
+          roseNameTag.textContent = `“${goalText}” 🌹`;
+
+          virtualRose.classList.add('bloomed');
+          playChime();
+
+          const rect = virtualRose.getBoundingClientRect();
+          const emojis = ['🌸', '🌹', '✨', '💖', '🌺', '🌷', '🫧'];
+          for (let i = 0; i < 24; i++) {
+            setTimeout(() => {
+              const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+              const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 80;
+              const y = rect.top + rect.height / 2 + (Math.random() - 0.5) * 80;
+              spawnFloatingBubble(x, y, emoji);
+            }, i * 40);
+          }
+        });
+      }
+
+      /* 6. REJECTION PHOTO UPLOADER */
+      const rejectionFileInput = document.getElementById('rejection-file-input');
+      const polaroidGallery = document.getElementById('polaroid-gallery');
+
+      if (rejectionFileInput && polaroidGallery) {
+        rejectionFileInput.addEventListener('change', (e) => {
+          const files = e.target.files;
+          if (!files || !files.length) return;
+
+          Array.from(files).forEach((file, index) => {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              const card = document.createElement('div');
+              const randomRot = (Math.random() * 6 - 3).toFixed(1);
+              card.className = 'polaroid-card';
+              card.style.setProperty('--rot', `${randomRot}deg`);
+              card.onclick = () => previewImage(event.target.result, file.name);
+
+              card.innerHTML = `
+                <div class="polaroid-tape"></div>
+                <div class="polaroid-img-box">
+                  <img src="${event.target.result}" alt="Rejection Photo" />
+                </div>
+                <div class="polaroid-caption">“${file.name.replace(/\.[^/.]+$/, "")}”</div>
+                <div class="polaroid-tag">#MyJourney</div>
+              `;
+              polaroidGallery.prepend(card);
+              spawnFloatingBubble(window.innerWidth / 2, window.innerHeight / 2, '📸');
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+      }
+
+      /* 7. CV UPLOADER HANDLER */
+      const cvFileInput = document.getElementById('cv-file-input');
+      const cvUploadStatus = document.getElementById('cv-upload-status');
+
+      if (cvFileInput && cvUploadStatus) {
+        cvFileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          customCVFileName = file.name;
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            customCVDataUrl = event.target.result;
+            cvUploadStatus.textContent = `✨ Successfully loaded: ${file.name} (Ready to view / download!)`;
+            cvUploadStatus.style.color = '#06d6a0';
+            playChime();
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      /* 8. WEB AUDIO SYNTHESIZER */
+      function initAudio() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+      }
+
+      function playPopSound(freq = 440, duration = 0.08) {
+        try {
+          initAudio();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + duration);
+
+          gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch (e) {}
+      }
+
+      function playChime() {
+        const notes = [523.25, 659.25, 783.99, 1046.50];
+        notes.forEach((note, idx) => {
+          setTimeout(() => {
+            playPopSound(note, 0.4);
+          }, idx * 120);
+        });
+      }
+
+      const chordFrequencies = [
+        [349.23, 440.00, 523.25, 659.25],
+        [392.00, 493.88, 587.33, 783.99],
+        [329.63, 392.00, 493.88, 587.33],
+        [440.00, 523.25, 659.25, 880.00]
+      ];
+      let chordIndex = 0;
+
+      function playAmbientChord() {
+        if (!isPlayingBgm || !audioCtx) return;
+        const chord = chordFrequencies[chordIndex];
+        chordIndex = (chordIndex + 1) % chordFrequencies.length;
+
+        chord.forEach((freq) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+          gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.025, audioCtx.currentTime + 1.2);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 4.5);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + 4.6);
+        });
+      }
+
+      const bgmToggle = document.getElementById('bgm-toggle');
+      if (bgmToggle) {
+        bgmToggle.addEventListener('click', () => {
+          initAudio();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          isPlayingBgm = !isPlayingBgm;
+
+          const label = bgmToggle.querySelector('.audio-label');
+          if (isPlayingBgm) {
+            label.textContent = 'Music: Playing 🎵';
+            bgmToggle.style.background = 'linear-gradient(135deg, #06d6a0, #118ab2)';
+            playAmbientChord();
+            bgmInterval = setInterval(playAmbientChord, 4500);
+          } else {
+            label.textContent = 'Music: Off';
+            bgmToggle.style.background = '';
+            if (bgmInterval) clearInterval(bgmInterval);
+          }
+        });
+      }
+    });
+
+    /* Global Modal Functions */
+    function previewImage(src, caption) {
+      const modal = document.getElementById('preview-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalIframe = document.getElementById('modal-iframe');
+      const modalCaption = document.getElementById('modal-caption');
+
+      modalIframe.style.display = 'none';
+      modalImg.style.display = 'block';
+      modalImg.src = src;
+      modalCaption.textContent = caption || 'Photo Preview';
+      modal.classList.add('active');
+    }
+
+    function previewCVModal() {
+      const modal = document.getElementById('preview-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalIframe = document.getElementById('modal-iframe');
+      const modalCaption = document.getElementById('modal-caption');
+
+      if (customCVDataUrl) {
+        if (customCVDataUrl.startsWith('data:image')) {
+          modalIframe.style.display = 'none';
+          modalImg.style.display = 'block';
+          modalImg.src = customCVDataUrl;
+        } else {
+          modalImg.style.display = 'none';
+          modalIframe.style.display = 'block';
+          modalIframe.src = customCVDataUrl;
+        }
+        modalCaption.textContent = `Previewing: ${customCVFileName}`;
+      } else {
+        modalIframe.style.display = 'none';
+        modalImg.style.display = 'block';
+        modalImg.src = 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=80';
+        modalCaption.textContent = 'Sample Academic CV Preview (Upload your own PDF/Image below anytime!)';
+      }
+      modal.classList.add('active');
+    }
+
+    function closePreviewModal() {
+      document.getElementById('preview-modal').classList.remove('active');
+    }
+
+    function handleDownloadCV(e) {
+      e.preventDefault();
+      if (customCVDataUrl) {
+        const a = document.createElement('a');
+        a.href = customCVDataUrl;
+        a.download = customCVFileName;
+        a.click();
+      } else {
+        alert("✨ You can upload your real CV/Resume file directly in the box below to enable instant downloading!");
+      }
+    }
+  </script>
+</body>
+</html>
