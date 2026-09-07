@@ -137,7 +137,7 @@
       align-items: center;
       gap: 0.5rem;
       background: linear-gradient(135deg, #ff758f, #ff4d6d);
-      color: #fff;
+      color: #fff !important;
       box-shadow: 0 4px 0 #c9184a, 0 8px 20px rgba(255, 77, 109, 0.4);
       transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -526,7 +526,7 @@
       margin: 0;
     }
 
-    /* ACT 2: TRANSITION */
+    /* ACT 2 */
     .transition-card {
       background: rgba(30, 22, 38, 0.88);
       border: 1px solid rgba(255, 153, 200, 0.3);
@@ -635,11 +635,12 @@
     }
 
     /* =========================================================
-       NEW: REJECTION LETTERS & POLAROID GALLERY BOARD
+       REJECTION LETTERS & POLAROID GALLERY BOARD
+       Directly loading from GitHub repo /assets/ folder
        ========================================================= */
     .rejection-board-section {
       margin-top: 3rem;
-      background: rgba(15, 11, 22, 0.75);
+      background: rgba(15, 11, 22, 0.85);
       border: 2px solid rgba(180, 50, 80, 0.4);
       border-radius: 24px;
       padding: 2.2rem 1.8rem;
@@ -650,7 +651,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       text-align: left;
     }
 
@@ -671,26 +672,26 @@
     .polaroid-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      gap: 1.6rem;
       margin-bottom: 1.8rem;
     }
 
     .polaroid-card {
       background: #fff;
       padding: 0.9rem 0.9rem 1.4rem 0.9rem;
-      border-radius: 6px;
+      border-radius: 8px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.4);
       color: #333;
       transform: rotate(var(--rot, -2deg));
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
       position: relative;
       cursor: pointer;
     }
 
     .polaroid-card:hover {
-      transform: scale(1.05) rotate(0deg);
-      z-index: 10;
-      box-shadow: 0 15px 35px rgba(255, 117, 143, 0.35);
+      transform: scale(1.06) rotate(0deg) !important;
+      z-index: 15;
+      box-shadow: 0 18px 40px rgba(255, 117, 143, 0.4);
     }
 
     .polaroid-tape {
@@ -698,16 +699,17 @@
       top: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 60px;
-      height: 18px;
-      background: rgba(255, 182, 193, 0.7);
+      width: 65px;
+      height: 20px;
+      background: rgba(255, 182, 193, 0.75);
       backdrop-filter: blur(2px);
+      border-radius: 2px;
     }
 
     .polaroid-img-box {
       width: 100%;
-      height: 160px;
-      background: #201a28;
+      height: 180px;
+      background: #1e1828;
       border-radius: 4px;
       overflow: hidden;
       display: flex;
@@ -716,7 +718,6 @@
       justify-content: center;
       color: #f7cad0;
       text-align: center;
-      padding: 0.75rem;
       position: relative;
     }
 
@@ -725,15 +726,30 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .polaroid-card:hover .polaroid-img-box img {
+      transform: scale(1.08);
+    }
+
+    .polaroid-placeholder-inner {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
     }
 
     .polaroid-caption {
-      margin-top: 0.8rem;
+      margin-top: 0.9rem;
       font-family: var(--font-handwriting);
-      font-size: 1.25rem;
-      line-height: 1.2;
+      font-size: 1.3rem;
+      line-height: 1.25;
       color: #4a283e;
       text-align: center;
+      font-weight: 700;
     }
 
     .polaroid-tag {
@@ -745,35 +761,31 @@
       padding: 0.2rem 0.6rem;
       border-radius: 9999px;
       display: inline-block;
-      margin-top: 0.3rem;
+      margin-top: 0.35rem;
     }
 
-    .upload-rejection-zone {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.05);
+    .github-file-tip {
+      background: rgba(255, 255, 255, 0.06);
       border: 1px dashed rgba(255, 117, 143, 0.4);
       border-radius: 16px;
-      padding: 1.2rem 1.5rem;
-    }
-
-    .upload-info {
-      font-size: 0.9rem;
+      padding: 1.1rem 1.4rem;
+      font-size: 0.88rem;
       color: #e4c1f9;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
 
     /* =========================================================
-       NEW: ACADEMIC PORTFOLIO & CV SHOWCASE HUB
+       ACADEMIC PORTFOLIO & CV HUB
+       Directly linked to cv.pdf on GitHub
        ========================================================= */
     .cv-hub-section {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border: 2px solid #ffccd5;
       box-shadow: 0 25px 60px rgba(255, 117, 143, 0.22);
       border-radius: 28px;
-      padding: 3rem 2.5rem;
+      padding: 3.2rem 2.5rem;
       margin: 4rem 0;
       color: #4a283e;
       text-align: center;
@@ -809,7 +821,7 @@
     .cv-desc {
       font-size: 1.05rem;
       color: #724e65;
-      max-width: 620px;
+      max-width: 640px;
       margin: 0 auto 2rem auto;
       line-height: 1.7;
     }
@@ -823,33 +835,33 @@
       margin-bottom: 2rem;
     }
 
-    .cv-dropzone {
+    /* Embedded PDF Viewer Box */
+    .cv-embed-container {
       background: #fff5f7;
-      border: 2px dashed #ff85a1;
+      border: 2px solid #ffccd5;
       border-radius: 20px;
-      padding: 1.8rem;
-      max-width: 580px;
-      margin: 0 auto;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      padding: 1.5rem;
+      max-width: 760px;
+      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 10px 25px rgba(255, 117, 143, 0.12);
     }
 
-    .cv-dropzone:hover {
-      background: #ffe8ee;
-      border-color: #ff4d6d;
-      transform: scale(1.02);
+    .cv-embed-iframe {
+      width: 100%;
+      height: 480px;
+      border: 1px solid #ffb3c1;
+      border-radius: 12px;
+      background: #fff;
     }
 
-    .cv-dropzone-icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .cv-status-msg {
-      margin-top: 0.8rem;
-      font-size: 0.88rem;
-      color: #a4133c;
-      font-weight: 600;
+    .cv-github-note {
+      font-size: 0.85rem;
+      color: #8c687e;
+      background: #ffeef2;
+      padding: 0.75rem 1.2rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
 
     /* ACT 3: ROSES */
@@ -1025,7 +1037,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Modal for Image Preview */
+    /* Modal for Fullscreen Image View */
     .image-modal {
       display: none;
       position: fixed;
@@ -1033,8 +1045,8 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
       z-index: 99999;
       justify-content: center;
       align-items: center;
@@ -1048,7 +1060,7 @@
     .modal-content-box {
       position: relative;
       max-width: 90vw;
-      max-height: 85vh;
+      max-height: 88vh;
       background: #fff;
       padding: 1.5rem;
       border-radius: 16px;
@@ -1059,7 +1071,7 @@
 
     .modal-content-box img {
       max-width: 100%;
-      max-height: 70vh;
+      max-height: 75vh;
       object-fit: contain;
       border-radius: 8px;
     }
@@ -1068,15 +1080,16 @@
       position: absolute;
       top: -15px;
       right: -15px;
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: #ff4d6d;
       color: #fff;
       border: 2px solid #fff;
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     /* ANIMATIONS */
@@ -1319,47 +1332,56 @@
           <p class="game-hint" id="game-status">Cleared 0/5 worries ✨</p>
         </div>
 
-        <!-- NEW: THE WALL OF SCHOLARSHIP REJECTIONS & STEPPING STONES -->
+        <!-- THE WALL OF SCHOLARSHIP REJECTIONS & STEPPING STONES -->
         <div class="rejection-board-section">
           <div class="board-header">
-            <h3 class="board-title">🥀 The Wall of Thorns: Scholarship Letters & Stepping Stones</h3>
-            <p class="board-subtitle">Every rejection is a thorn that shapes the bloom. Add and view your rejection memories below:</p>
+            <h3 class="board-title">🥀 The Wall of Thorns: Scholarship Letters & Memories</h3>
+            <p class="board-subtitle">Every rejection is a thorn that shapes the blooming rose. These images are loaded directly from your repository's <code>assets/</code> folder:</p>
           </div>
 
-          <!-- Polaroid Grid Gallery -->
+          <!-- Polaroid Grid Gallery (Directly links to assets/rejection-1.jpg, assets/rejection-2.jpg, assets/rejection-3.jpg) -->
           <div class="polaroid-grid" id="polaroid-gallery">
             
-            <!-- Default Sample 1 -->
-            <div class="polaroid-card" style="--rot: -2.5deg;" onclick="previewImage('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=80', 'Scholarship Rejection Letter #1')">
+            <!-- Photo 1: assets/rejection-1.png or rejection-1.jpg -->
+            <div class="polaroid-card" style="--rot: -2.5deg;" onclick="previewImage('assets/rejection-1.png', 'Scholarship Rejection Letter #1')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">📜</div>
-                <div style="font-size:0.85rem; font-weight: 600;">“We regret to inform you...”</div>
-                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Scholarship Selection Round</div>
+                <img src="assets/rejection-1.png" alt="Rejection Letter 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="polaroid-placeholder-inner" style="display:none;">
+                  <div style="font-size:2.2rem; margin-bottom: 0.3rem;">📜</div>
+                  <div style="font-size:0.85rem; font-weight: 600;">“We regret to inform you...”</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-1.png</code> in repo</div>
+                </div>
               </div>
-              <div class="polaroid-caption">“A painful thorn, but it proved I dared to apply.”</div>
+              <div class="polaroid-caption">“A painful thorn, but it proved I dared to try.”</div>
               <div class="polaroid-tag">#Resilience</div>
             </div>
 
-            <!-- Default Sample 2 -->
-            <div class="polaroid-card" style="--rot: 2deg;" onclick="previewImage('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80', 'Interview Stage Panic')">
+            <!-- Photo 2: assets/rejection-2.png or rejection-2.jpg -->
+            <div class="polaroid-card" style="--rot: 2deg;" onclick="previewImage('assets/rejection-2.png', 'Interview Panic & Rejection')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">⚡</div>
-                <div style="font-size:0.85rem; font-weight: 600;">Final Interview Room</div>
-                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Freaked out at the finish line</div>
+                <img src="assets/rejection-2.png" alt="Rejection Letter 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="polaroid-placeholder-inner" style="display:none;">
+                  <div style="font-size:2.2rem; margin-bottom: 0.3rem;">⚡</div>
+                  <div style="font-size:0.85rem; font-weight: 600;">Final Interview Stage</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-2.png</code> in repo</div>
+                </div>
               </div>
-              <div class="polaroid-caption">“Next time, I will breathe and trust my prep.”</div>
+              <div class="polaroid-caption">“Next time, I will breathe and trust myself.”</div>
               <div class="polaroid-tag">#SteppingStone</div>
             </div>
 
-            <!-- Default Sample 3 -->
-            <div class="polaroid-card" style="--rot: -1.5deg;" onclick="previewImage('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80', 'Competition Finalist')">
+            <!-- Photo 3: assets/rejection-3.png or rejection-3.jpg -->
+            <div class="polaroid-card" style="--rot: -1.5deg;" onclick="previewImage('assets/rejection-3.png', 'Academic Competition Memory')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <div style="font-size:2.2rem; margin-bottom: 0.3rem;">🌱</div>
-                <div style="font-size:0.85rem; font-weight: 600;">Olympiad / Fellowship</div>
-                <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Not this time, but I grew</div>
+                <img src="assets/rejection-3.png" alt="Rejection Letter 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="polaroid-placeholder-inner" style="display:none;">
+                  <div style="font-size:2.2rem; margin-bottom: 0.3rem;">🌱</div>
+                  <div style="font-size:0.85rem; font-weight: 600;">Fellowship Selection</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-3.png</code> in repo</div>
+                </div>
               </div>
               <div class="polaroid-caption">“Fuel that makes my motivation shine.”</div>
               <div class="polaroid-tag">#Learning</div>
@@ -1367,17 +1389,10 @@
 
           </div>
 
-          <!-- Uploader Input for Custom Photos -->
-          <div class="upload-rejection-zone">
-            <div class="upload-info">
-              <strong>📸 Add Your Own Scholarship Screenshots / Photos:</strong>
-              <div style="font-size:0.82rem; opacity: 0.85; margin-top: 2px;">Upload rejection letters or memory screenshots to pin them on this board!</div>
-            </div>
+          <div class="github-file-tip">
+            <span style="font-size: 1.4rem;">💡</span>
             <div>
-              <input type="file" id="rejection-file-input" accept="image/*" multiple style="display: none;" />
-              <button class="bubble-btn sparkle-btn" onclick="document.getElementById('rejection-file-input').click()">
-                <span>➕ Upload Photos</span>
-              </button>
+              <strong>How to display your actual photos:</strong> Simply create an <code>assets</code> folder in your GitHub repository and upload your photos named <code>rejection-1.png</code>, <code>rejection-2.png</code>, <code>rejection-3.png</code>! They will automatically show up here on your live website.
             </div>
           </div>
         </div>
@@ -1421,7 +1436,7 @@
       </div>
     </section>
 
-    <!-- NEW: ACADEMIC PROFILE & CV / RESUME HUB -->
+    <!-- ACADEMIC PROFILE & DIRECT CV FILE SHOWCASE -->
     <section class="cv-hub-section" id="cv-section">
       <div class="cv-badge-row">
         <span class="cv-pill">📐 Math Olympiad</span>
@@ -1432,25 +1447,28 @@
 
       <h2 class="cv-title">Cindy's Academic CV & Journey</h2>
       <p class="cv-desc">
-        Here is a showcase of my academic background, projects, and pursuits. Feel free to view or download my latest CV below:
+        Here is my academic background and pursuits. You can view or download my official CV file below:
       </p>
 
       <div class="cv-actions-container">
-        <a href="#cv-section" id="download-cv-btn" class="bubble-btn" onclick="handleDownloadCV(event)">
-          <span>📥 Download My CV (PDF)</span>
+        <!-- Direct download link to cv.pdf uploaded on GitHub -->
+        <a href="cv.pdf" class="bubble-btn" download="Cindy_CV.pdf" target="_blank">
+          <span>📥 Download My CV (cv.pdf)</span>
         </a>
-        <button class="bubble-btn btn-secondary" onclick="previewCVModal()">
-          <span>👁️ Preview CV in Browser</span>
-        </button>
+        <!-- Direct in-tab viewer link to cv.pdf -->
+        <a href="cv.pdf" class="bubble-btn btn-secondary" target="_blank">
+          <span>👁️ Open Fullscreen CV</span>
+        </a>
       </div>
 
-      <!-- CV File Dropzone / Uploader -->
-      <div class="cv-dropzone" onclick="document.getElementById('cv-file-input').click()">
-        <input type="file" id="cv-file-input" accept=".pdf,image/*" style="display: none;" />
-        <div class="cv-dropzone-icon">📄</div>
-        <div style="font-weight: 700; color: #ff4d6d; font-size: 1.05rem;">Click to Upload / Replace Your CV File</div>
-        <div style="font-size: 0.85rem; color: #885e78; margin-top: 4px;">Supports PDF or image files (stores locally for instant preview & download)</div>
-        <div class="cv-status-msg" id="cv-upload-status">Currently using: Cindy_Academic_CV.pdf (Ready to download) ✨</div>
+      <!-- Embedded PDF Viewer linking directly to cv.pdf in repository -->
+      <div class="cv-embed-container">
+        <iframe src="cv.pdf" class="cv-embed-iframe" title="Cindy's CV"></iframe>
+        <div>
+          <span class="cv-github-note">
+            📄 <strong>GitHub File Link:</strong> Upload your file named <code>cv.pdf</code> to your GitHub repository root so anyone visiting your site can view & download it directly!
+          </span>
+        </div>
       </div>
     </section>
 
@@ -1488,12 +1506,11 @@
 
   </main>
 
-  <!-- Fullscreen Image & Document Preview Modal -->
+  <!-- Fullscreen Image Preview Modal -->
   <div class="image-modal" id="preview-modal" onclick="closePreviewModal(event)">
     <div class="modal-content-box" onclick="event.stopPropagation()">
       <button class="modal-close-btn" onclick="closePreviewModal()">✕</button>
-      <img id="modal-img" src="" alt="Preview" style="display: none;" />
-      <iframe id="modal-iframe" src="" style="display: none; width: 80vw; height: 75vh; border: none; border-radius: 8px;"></iframe>
+      <img id="modal-img" src="" alt="Preview" />
       <div id="modal-caption" style="margin-top: 1rem; font-family: var(--font-heading); font-weight: 600; color: #ff4d6d;"></div>
     </div>
   </div>
@@ -1503,9 +1520,6 @@
     /* =========================================================
        ROSE & THORNS: INTERACTIVE STORY ENGINE
        ========================================================= */
-    let customCVDataUrl = null;
-    let customCVFileName = 'Cindy_Academic_CV.pdf';
-
     document.addEventListener('DOMContentLoaded', () => {
       if (window.lucide) {
         window.lucide.createIcons();
@@ -1765,7 +1779,7 @@
       }
 
       document.addEventListener('click', (e) => {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('.polaroid-card')) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('.polaroid-card') || e.target.closest('a')) {
           return;
         }
         const icons = ['✨', '🫧', '🌸', '💖', '⭐'];
@@ -1844,62 +1858,7 @@
         });
       }
 
-      /* 6. REJECTION PHOTO UPLOADER */
-      const rejectionFileInput = document.getElementById('rejection-file-input');
-      const polaroidGallery = document.getElementById('polaroid-gallery');
-
-      if (rejectionFileInput && polaroidGallery) {
-        rejectionFileInput.addEventListener('change', (e) => {
-          const files = e.target.files;
-          if (!files || !files.length) return;
-
-          Array.from(files).forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-              const card = document.createElement('div');
-              const randomRot = (Math.random() * 6 - 3).toFixed(1);
-              card.className = 'polaroid-card';
-              card.style.setProperty('--rot', `${randomRot}deg`);
-              card.onclick = () => previewImage(event.target.result, file.name);
-
-              card.innerHTML = `
-                <div class="polaroid-tape"></div>
-                <div class="polaroid-img-box">
-                  <img src="${event.target.result}" alt="Rejection Photo" />
-                </div>
-                <div class="polaroid-caption">“${file.name.replace(/\.[^/.]+$/, "")}”</div>
-                <div class="polaroid-tag">#MyJourney</div>
-              `;
-              polaroidGallery.prepend(card);
-              spawnFloatingBubble(window.innerWidth / 2, window.innerHeight / 2, '📸');
-            };
-            reader.readAsDataURL(file);
-          });
-        });
-      }
-
-      /* 7. CV UPLOADER HANDLER */
-      const cvFileInput = document.getElementById('cv-file-input');
-      const cvUploadStatus = document.getElementById('cv-upload-status');
-
-      if (cvFileInput && cvUploadStatus) {
-        cvFileInput.addEventListener('change', (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-
-          customCVFileName = file.name;
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            customCVDataUrl = event.target.result;
-            cvUploadStatus.textContent = `✨ Successfully loaded: ${file.name} (Ready to view / download!)`;
-            cvUploadStatus.style.color = '#06d6a0';
-            playChime();
-          };
-          reader.readAsDataURL(file);
-        });
-      }
-
-      /* 8. WEB AUDIO SYNTHESIZER */
+      /* 6. WEB AUDIO SYNTHESIZER */
       function initAudio() {
         if (!audioCtx) {
           audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1991,60 +1950,19 @@
       }
     });
 
-    /* Global Modal Functions */
+    /* Fullscreen Modal Functions */
     function previewImage(src, caption) {
       const modal = document.getElementById('preview-modal');
       const modalImg = document.getElementById('modal-img');
-      const modalIframe = document.getElementById('modal-iframe');
       const modalCaption = document.getElementById('modal-caption');
 
-      modalIframe.style.display = 'none';
-      modalImg.style.display = 'block';
       modalImg.src = src;
       modalCaption.textContent = caption || 'Photo Preview';
       modal.classList.add('active');
     }
 
-    function previewCVModal() {
-      const modal = document.getElementById('preview-modal');
-      const modalImg = document.getElementById('modal-img');
-      const modalIframe = document.getElementById('modal-iframe');
-      const modalCaption = document.getElementById('modal-caption');
-
-      if (customCVDataUrl) {
-        if (customCVDataUrl.startsWith('data:image')) {
-          modalIframe.style.display = 'none';
-          modalImg.style.display = 'block';
-          modalImg.src = customCVDataUrl;
-        } else {
-          modalImg.style.display = 'none';
-          modalIframe.style.display = 'block';
-          modalIframe.src = customCVDataUrl;
-        }
-        modalCaption.textContent = `Previewing: ${customCVFileName}`;
-      } else {
-        modalIframe.style.display = 'none';
-        modalImg.style.display = 'block';
-        modalImg.src = 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=80';
-        modalCaption.textContent = 'Sample Academic CV Preview (Upload your own PDF/Image below anytime!)';
-      }
-      modal.classList.add('active');
-    }
-
     function closePreviewModal() {
       document.getElementById('preview-modal').classList.remove('active');
-    }
-
-    function handleDownloadCV(e) {
-      e.preventDefault();
-      if (customCVDataUrl) {
-        const a = document.createElement('a');
-        a.href = customCVDataUrl;
-        a.download = customCVFileName;
-        a.click();
-      } else {
-        alert("✨ You can upload your real CV/Resume file directly in the box below to enable instant downloading!");
-      }
     }
   </script>
 </body>
