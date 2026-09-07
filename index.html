@@ -1339,48 +1339,48 @@
             <p class="board-subtitle">Every rejection is a thorn that shapes the blooming rose. These images are loaded directly from your repository's <code>assets/</code> folder:</p>
           </div>
 
-          <!-- Polaroid Grid Gallery (Directly links to assets/rejection-1.jpg, assets/rejection-2.jpg, assets/rejection-3.jpg) -->
+          <!-- Polaroid Grid Gallery (Directly links to rejection-1.png, rejection-2.png, rejection-3.png in repo) -->
           <div class="polaroid-grid" id="polaroid-gallery">
             
-            <!-- Photo 1: assets/rejection-1.png or rejection-1.jpg -->
-            <div class="polaroid-card" style="--rot: -2.5deg;" onclick="previewImage('assets/rejection-1.png', 'Scholarship Rejection Letter #1')">
+            <!-- Photo 1: rejection-1.png -->
+            <div class="polaroid-card" style="--rot: -2.5deg;" onclick="previewImage('rejection-1.png', 'Scholarship Rejection Letter #1')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <img src="assets/rejection-1.png" alt="Rejection Letter 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="rejection-1.png" alt="Rejection Letter 1" onerror="if(this.src.indexOf('assets/') === -1){ this.src='assets/rejection-1.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='flex'; }" />
                 <div class="polaroid-placeholder-inner" style="display:none;">
                   <div style="font-size:2.2rem; margin-bottom: 0.3rem;">📜</div>
                   <div style="font-size:0.85rem; font-weight: 600;">“We regret to inform you...”</div>
-                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-1.png</code> in repo</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">File: <code>rejection-1.png</code></div>
                 </div>
               </div>
               <div class="polaroid-caption">“A painful thorn, but it proved I dared to try.”</div>
               <div class="polaroid-tag">#Resilience</div>
             </div>
 
-            <!-- Photo 2: assets/rejection-2.png or rejection-2.jpg -->
-            <div class="polaroid-card" style="--rot: 2deg;" onclick="previewImage('assets/rejection-2.png', 'Interview Panic & Rejection')">
+            <!-- Photo 2: rejection-2.png -->
+            <div class="polaroid-card" style="--rot: 2deg;" onclick="previewImage('rejection-2.png', 'Interview Panic & Rejection')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <img src="assets/rejection-2.png" alt="Rejection Letter 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="rejection-2.png" alt="Rejection Letter 2" onerror="if(this.src.indexOf('assets/') === -1){ this.src='assets/rejection-2.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='flex'; }" />
                 <div class="polaroid-placeholder-inner" style="display:none;">
                   <div style="font-size:2.2rem; margin-bottom: 0.3rem;">⚡</div>
                   <div style="font-size:0.85rem; font-weight: 600;">Final Interview Stage</div>
-                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-2.png</code> in repo</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">File: <code>rejection-2.png</code></div>
                 </div>
               </div>
               <div class="polaroid-caption">“Next time, I will breathe and trust myself.”</div>
               <div class="polaroid-tag">#SteppingStone</div>
             </div>
 
-            <!-- Photo 3: assets/rejection-3.png or rejection-3.jpg -->
-            <div class="polaroid-card" style="--rot: -1.5deg;" onclick="previewImage('assets/rejection-3.png', 'Academic Competition Memory')">
+            <!-- Photo 3: rejection-3.png -->
+            <div class="polaroid-card" style="--rot: -1.5deg;" onclick="previewImage('rejection-3.png', 'Academic Competition Memory')">
               <div class="polaroid-tape"></div>
               <div class="polaroid-img-box">
-                <img src="assets/rejection-3.png" alt="Rejection Letter 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="rejection-3.png" alt="Rejection Letter 3" onerror="if(this.src.indexOf('assets/') === -1){ this.src='assets/rejection-3.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='flex'; }" />
                 <div class="polaroid-placeholder-inner" style="display:none;">
                   <div style="font-size:2.2rem; margin-bottom: 0.3rem;">🌱</div>
                   <div style="font-size:0.85rem; font-weight: 600;">Fellowship Selection</div>
-                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">Put <code>assets/rejection-3.png</code> in repo</div>
+                  <div style="font-size:0.75rem; opacity: 0.8; margin-top: 4px;">File: <code>rejection-3.png</code></div>
                 </div>
               </div>
               <div class="polaroid-caption">“Fuel that makes my motivation shine.”</div>
@@ -1390,9 +1390,9 @@
           </div>
 
           <div class="github-file-tip">
-            <span style="font-size: 1.4rem;">💡</span>
+            <span style="font-size: 1.4rem;">✨</span>
             <div>
-              <strong>How to display your actual photos:</strong> Simply create an <code>assets</code> folder in your GitHub repository and upload your photos named <code>rejection-1.png</code>, <code>rejection-2.png</code>, <code>rejection-3.png</code>! They will automatically show up here on your live website.
+              <strong>Your photos are linked:</strong> <code>rejection-1.png</code>, <code>rejection-2.png</code>, <code>rejection-3.png</code> are loaded directly from your repository! Click on any card to view it in full size.
             </div>
           </div>
         </div>
